@@ -1,0 +1,16 @@
+{
+  "tasks": {
+    "dev": "deno serve --watch -R main.ts",
+    "build:bin": "deno compile --output super main.ts",
+    "create:app:mac": "mkdir -p Super.app/Contents/{MacOS,Resources} && mv super Super.app/Contents/MacOS/ && echo 'please edit the Info.plist file.' && touch ./Super.app/Contents/Info.plist",
+    // neh
+  },
+  "imports": {
+    "@std/assert": "jsr:@std/assert@1",
+    "@std/http": "jsr:@std/http@1",
+    "chalk": "npm:chalk@^5.3.0",
+    "commander": "npm:commander@^12.1.0",
+    "less": "npm:less@^4.2.0",
+    "toml": "npm:toml@^3.0.0",
+  },
+}

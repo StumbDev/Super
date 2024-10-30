@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Super</title>
+        <!--Styles -->
+        <link href="css/style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!--Body html content -->
+
+        <div class="card">
+            <button id="startServiceBtn">Start Service</button>
+            <br />
+            <button onclick="aboutButton()">About ℹ️</button>
+        </div>
+
+        <div class="card">
+            <h2>Service Runner CLI</h2>
+            <div class="terminal">
+                <div class="output" id="output"></div>
+                <div class="input-line">
+                    <span class="prompt">/ $</span>
+                    <input
+                        type="text"
+                        id="input"
+                        autofocus
+                        autocomplete="off"
+                    />
+                </div>
+            </div>
+        </div>
+
+        <!--scripts -->
+        <script>
+            const startButton = document.getElementById("startServiceBtn");
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, "0");
+            const minutes = now.getMinutes().toString().padStart(2, "0");
+            const seconds = now.getSeconds().toString().padStart(2, "0");
+
+            const currentTime = `${hours}:${minutes}:${seconds}`;
+
+            document.querySelectorAll(".menu-item").forEach((item) => {
+                item.addEventListener("click", () => {
+                    console.log(`Clicked on ${item.textContent}`);
+                });
+            });
+
+            document.querySelectorAll("startServiceBtn").forEach((click) => {
+                document.addEventListener("click", () => {
+                    console.log(
+                        chalk.green("Service started at:", currentTime),
+                    );
+                });
+            });
+        </script>
+        <script src="./static/MainScript.js"></script>
+    </body>
+</html>

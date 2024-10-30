@@ -11,6 +11,8 @@
     "chalk": "npm:chalk@^5.3.0",
     "commander": "npm:commander@^12.1.0",
     "less": "npm:less@^4.2.0",
+    "nypm": "npm:nypm@^0.3.12",
     "toml": "npm:toml@^3.0.0",
+    "web3": "npm:web3@^4.14.0",
   },
 }
